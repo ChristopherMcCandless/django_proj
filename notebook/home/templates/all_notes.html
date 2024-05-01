@@ -1,0 +1,21 @@
+{% extends 'menu.html' %}
+
+{% block title %}Заметки{% endblock %}
+
+{% block content %}
+   <div class="features">
+             <h1>Заметки</h1>
+             {% if notes  %}
+            {% for note in notes %}
+              <div class="alert alert-warning">
+                <h3> {{ note.name }} </h3>
+                <p> {{ note.content }} </p>
+              </div>
+            {% endfor %}
+        {% else %}
+          <p>У вас нет заметок</p>
+          {% endif %}
+   </div>
+   
+
+{% endblock %}
